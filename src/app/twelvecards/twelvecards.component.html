@@ -1,0 +1,21 @@
+<header>
+    Twelve Cards Memory Game
+</header>
+<div class="card-container">
+    <div class="row">
+      <app-card
+        *ngFor="let card of cardObjects"
+        [frontImage]="'./assets/face1.jpg'"
+        [backImage]="card.backImage"
+        (cardClicked)="onCardClicked($event)"
+      ></app-card>
+    </div>
+  </div>
+  <div class="scoreboard">
+    <p>Moves: {{ moves }}</p>
+    <p>Misses: {{ misses }}</p>
+    <p>Accuracy: {{getAccuracy()}}%</p>
+  </div>
+  <div>
+  <button class="zoom-btn" routerLink="/" >Exit</button>
+  </div>
